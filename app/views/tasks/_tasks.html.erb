@@ -1,0 +1,17 @@
+<% if tasks.any? %>
+  <ul>
+    <% tasks.each do |task| %>
+      <li>
+        <img src="<%= gravatar_url(task.user, { size: 64 }) %>" alt="">
+        <div>
+          <div>
+            <%= link_to task.user.name, user_path(task.user) %> <span>posted at <%= task.created_at %></span>
+          </div>
+          <div>
+            <p><%= task.content %></p>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
