@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:index, :show]
-  before_action :authenticate_user
+  
   
   def index
      @pagy, @users = pagy(User.order(id: :desc), items: 25)
