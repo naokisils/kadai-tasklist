@@ -14,8 +14,6 @@
             </ul>
             <button type="button"><%= current_user.name %></button>
             <ul>
-              <li><%= link_to 'My profile', user_path(current_user) %></li>
-              <li></li>
               <li><%= link_to 'Logout', logout_path, method: :delete %></li>
             </ul>
           </div>
