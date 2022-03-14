@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   
-  resources :tasks
+  resources :tasks, only: [:index, :show, :new, :edit]
   get 'signup', to: 'users#new'
-  resources :users, only: [:index, :new]
-  resources :toppages
-  resources :sessions
+  resources :users
+  resources :toppages, only: [:index]
+  resources :sessions, only: [:new]
 end
